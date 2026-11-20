@@ -2,220 +2,673 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio personale, progetti creativi ed esperimenti digitali.">
+<title>Il mio spazio creativo</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: Inter, Arial, sans-serif;
-            background: #0b0f19;
-            color: #f1f5f9;
-            min-height: 100vh;
-        }
+<style>
+:root {
+    --bg: #f8f7f4;
+    --text: #20202a;
+    --muted: #777782;
+    --purple: #7955e8;
+    --blue: #b7d8ff;
+    --orange: #ff986b;
+    --green: #c7edcf;
+    --white: #fff;
+}
 
-        /* HEADER */
-        header {
-            max-width: 1000px;
-            margin: auto;
-            padding: 70px 24px 35px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .tag {
-            color: #818cf8;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        h1 {
-            font-size: clamp(40px, 7vw, 72px);
-            letter-spacing: -3px;
-            margin-bottom: 15px;
-        }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
 
-        h1 span {
-            color: #818cf8;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        .subtitle {
-            color: #94a3b8;
-            font-size: 16px;
-            line-height: 1.7;
-            max-width: 600px;
-        }
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
 
-        /* PROJECT GRID */
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px 24px 70px;
-        }
+/* NAVBAR */
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
 
-        /* PROJECT CARD */
-        .card {
-            background: #151b2b;
-            border: 1px solid #252e42;
-            border-radius: 18px;
-            padding: 28px;
-            transition: 0.25s ease;
-        }
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #818cf8;
-            background: #1a2235;
-        }
+.logo span {
+    color: var(--purple);
+}
 
-        .category {
-            font-size: 11px;
-            letter-spacing: 2px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+}
 
-        .purple { color: #818cf8; }
-        .green  { color: #34d399; }
-        .yellow { color: #fbbf24; }
-        .pink   { color: #f472b6; }
-        .blue   { color: #38bdf8; }
-        .orange { color: #fb923c; }
+.nav-links a:hover {
+    color: var(--purple);
+}
 
-        .card h2 {
-            font-size: 23px;
-            margin-bottom: 12px;
-        }
+.menu-button {
+    display: none;
+    border: 0;
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+}
 
-        .card p {
-            color: #94a3b8;
-            line-height: 1.7;
-            font-size: 14px;
-            min-height: 48px;
-        }
+/* HERO */
 
-        .card a {
-            display: inline-block;
-            margin-top: 24px;
-            text-decoration: none;
-            color: #e2e8f0;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.2s;
-        }
+.hero {
+    padding: 100px 0 110px;
+    position: relative;
+}
 
-        .card a:hover {
-            color: #818cf8;
-        }
+.hello {
+    display: inline-block;
+    padding: 9px 16px;
+    border-radius: 30px;
+    background: #eee8ff;
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
 
-        .arrow {
-            display: inline-block;
-            transition: transform 0.2s;
-        }
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 1.04;
+    letter-spacing: -5px;
+    max-width: 850px;
+}
 
-        .card a:hover .arrow {
-            transform: translate(4px, -4px);
-        }
+.hero h1 span {
+    color: var(--purple);
+}
 
-        /* FOOTER */
-        footer {
-            border-top: 1px solid #1e293b;
-            text-align: center;
-            padding: 25px;
-            color: #64748b;
-            font-size: 12px;
-        }
+.hero-description {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 540px;
+    line-height: 1.8;
+    margin-top: 28px;
+}
 
-        /* MOBILE */
-        @media (max-width: 650px) {
-            header {
-                padding-top: 50px;
-            }
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
 
-            .projects {
-                grid-template-columns: 1fr;
-            }
+.button {
+    padding: 15px 23px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .2s;
+}
 
-            h1 {
-                letter-spacing: -2px;
-            }
-        }
-    </style>
+.button:hover {
+    transform: translateY(-4px);
+}
+
+.primary {
+    background: var(--purple);
+    color: white;
+}
+
+.secondary {
+    background: white;
+    border: 1px solid #e8e6e2;
+}
+
+.decoration {
+    position: absolute;
+    right: 8%;
+    top: 110px;
+    font-size: 85px;
+    transform: rotate(15deg);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-15px) rotate(25deg); }
+}
+
+/* SECTIONS */
+
+section {
+    padding: 75px 0;
+}
+
+.section-label {
+    color: var(--purple);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: var(--muted);
+    max-width: 580px;
+    line-height: 1.7;
+}
+
+/* ABOUT */
+
+.about-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-card p {
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    background: #f0edff;
+    color: #6343cb;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* PROJECTS */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.project {
+    border-radius: 22px;
+    overflow: hidden;
+    background: white;
+    transition: .25s;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px #24202a12;
+}
+
+.project-visual {
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    font-size: 75px;
+}
+
+.visual-purple { background: #e8deff; }
+.visual-blue { background: #d9ebff; }
+.visual-orange { background: #ffe2d5; }
+.visual-green { background: #dff3df; }
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.tag {
+    background: #f3f2f0;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* FUN */
+
+.fun-box {
+    background: #22212d;
+    color: white;
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.fun-box h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.fun-box p {
+    color: #c2c0cb;
+    margin-bottom: 25px;
+}
+
+.fun-button {
+    background: var(--orange);
+    color: #29202a;
+    border: 0;
+    border-radius: 12px;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#fun-result {
+    margin-top: 25px;
+    font-size: 21px;
+    font-weight: 700;
+    min-height: 32px;
+}
+
+/* CONTACT */
+
+.contact-card {
+    background: var(--blue);
+    padding: 55px 30px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.contact-card h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 5vw, 48px);
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--purple);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 5%;
+        right: 5%;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        flex-direction: column;
+        z-index: 10;
+        box-shadow: 0 10px 30px #00000012;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .decoration {
+        display: none;
+    }
+
+    .about-card,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        padding: 25px;
+    }
+
+    .fun-box {
+        padding: 35px 20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <div class="tag">My digital space</div>
-        <h1>Projects<span>.</span></h1>
-        <p class="subtitle">
-            Una raccolta dei miei progetti, esperimenti e idee.
-            Esplora quello che sto costruendo.
+<div class="container">
+
+    <nav>
+        <a href="#" class="logo">my<span>space.</span></a>
+
+        <button class="menu-button" id="menu-button"
+                aria-label="Apri menu" aria-expanded="false">☰</button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">Chi sono</a></li>
+            <li><a href="#projects">Progetti</a></li>
+            <li><a href="#fun">Playground</a></li>
+            <li><a href="#contact">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="decoration">✳️</div>
+
+        <div class="hello">👋 Ciao, benvenuto nel mio mondo!</div>
+
+        <h1>
+            Creo cose<br>
+            <span>digitali.</span><br>
+            E mi diverto.
+        </h1>
+
+        <p class="hero-description">
+            Sono [IL TUO NOME], una persona curiosa che ama
+            sperimentare, creare progetti digitali e trasformare
+            idee strane in qualcosa di interessante.
         </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="button primary">
+                Guarda i miei progetti ↗
+            </a>
+
+            <a href="#about" class="button secondary">
+                Scopri chi sono
+            </a>
+        </div>
     </header>
 
-    <main>
-        <div class="projects">
+    <section id="about">
+        <div class="section-label">01 — About me</div>
+        <h2 class="section-title">Un po' di me.</h2>
 
-            <!-- PROJECT 1 -->
-            <div class="card">
-                <div class="category purple">01 — WEB</div>
-                <h2>Project Alpha</h2>
-                <p>Descrizione del progetto. Spiega brevemente cosa fa e cosa lo rende interessante.</p>
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                    Apri progetto <span class="arrow">↗</span>
-                </a>
+        <div class="about-card">
+            <div>
+                <p>
+                    Mi piace imparare cose nuove, smontare idee,
+                    sperimentare con la tecnologia e costruire
+                    piccoli progetti per il semplice piacere di farlo.
+                    <br><br>
+                    Non tutto quello che creo deve essere utile.
+                    A volte basta che sia divertente!
+                </p>
             </div>
 
-            <!-- PROJECT 2 -->
-            <div class="card">
-                <div class="category green">02 — DATA</div>
-                <h2>Project Beta</h2>
-                <p>Un progetto di analisi dati, visualizzazione o ricerca.</p>
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                    Apri progetto <span class="arrow">↗</span>
-                </a>
+            <div>
+                <h3 style="margin-bottom:18px">Cose che mi piacciono</h3>
+                <div class="skills">
+                    <span class="skill">💻 Coding</span>
+                    <span class="skill">🎨 Design</span>
+                    <span class="skill">🧠 Idee creative</span>
+                    <span class="skill">🎮 Gaming</span>
+                    <span class="skill">🤖 Tecnologia</span>
+                    <span class="skill">🚀 Esperimenti</span>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- PROJECT 3 -->
-            <div class="card">
-                <div class="category yellow">03 — TOOLS</div>
-                <h2>Project Gamma</h2>
-                <p>Uno strumento, un'applicazione o un piccolo esperimento interattivo.</p>
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                    Apri progetto <span class="arrow">↗</span>
-                </a>
-            </div>
+    <section id="projects">
+        <div class="section-label">02 — My creations</div>
+        <h2 class="section-title">Cose che ho costruito.</h2>
 
-            <!-- PROJECT 4 -->
-            <div class="card">
-                <div class="category pink">04 — OTHER</div>
-                <h2>Project Delta</h2>
-                <p>Un altro progetto da aggiungere al tuo portfolio.</p>
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                    Apri progetto <span class="arrow">↗</span>
-                </a>
-            </div>
+        <p class="section-description">
+            Progetti seri, esperimenti improbabili e idee nate
+            alle due di notte. Ecco alcune delle mie creazioni.
+        </p>
+
+        <div class="projects-grid">
+
+            <article class="project">
+                <div class="project-visual visual-purple">🎮</div>
+                <div class="project-info">
+                    <h3>Mini Game</h3>
+                    <p>
+                        Un piccolo gioco creato per mettere alla
+                        prova riflessi e pazienza.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a class="project-link" href="#">Prova il progetto ↗</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-visual visual-blue">🌤️</div>
+                <div class="project-info">
+                    <h3>Weather App</h3>
+                    <p>
+                        Una piccola applicazione per esplorare
+                        il meteo con un'interfaccia semplice.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">API</span>
+                    </div>
+                    <a class="project-link" href="#">Scopri di più ↗</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-visual visual-orange">🧪</div>
+                <div class="project-info">
+                    <h3>Random Generator</h3>
+                    <p>
+                        Un generatore di idee, nomi e cose
+                        completamente casuali.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Fun project</span>
+                    </div>
+                    <a class="project-link" href="#">Prova il progetto ↗</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-visual visual-green">🚀</div>
+                <div class="project-info">
+                    <h3>Secret Project</h3>
+                    <p>
+                        Un esperimento ancora in evoluzione.
+                        Qui le idee prendono forma!
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Work in progress</span>
+                        <span class="tag">Creative</span>
+                    </div>
+                    <a class="project-link" href="#">Coming soon ↗</a>
+                </div>
+            </article>
 
         </div>
-    </main>
+    </section>
+
+    <section id="fun">
+        <div class="section-label">03 — Just for fun</div>
+
+        <div class="fun-box">
+            <h2>Un po' di casualità? 🎲</h2>
+            <p>
+                Premi il pulsante e scopri una frase casuale.
+                Perché non tutto deve avere un senso!
+            </p>
+
+            <button class="fun-button" id="random-button">
+                Sorprendimi!
+            </button>
+
+            <div id="fun-result" aria-live="polite">
+                👀 Sono pronto...
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-card">
+            <div class="section-label">04 — Get in touch</div>
+            <h2>Hai un'idea folle?</h2>
+            <p>
+                Parliamone! Le idee migliori nascono spesso
+                dalle conversazioni più improbabili.
+            </p>
+
+            <a href="mailto:tuamail@example.com"
+               class="button primary">
+                Scrivimi una mail ✉️
+            </a>
+        </div>
+    </section>
 
     <footer>
-        © 2026 · My Project Hub
+        <p>
+            Realizzato con <span>♥</span> e un po' di caffeina.
+            © 2026 — [IL TUO NOME]
+        </p>
+        <p style="margin-top:8px">
+            <a href="https://github.com/TUO-USERNAME">
+                GitHub ↗
+            </a>
+        </p>
     </footer>
+
+</div>
+
+<script>
+const menuButton = document.getElementById("menu-button");
+const navLinks = document.getElementById("nav-links");
+
+menuButton.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.textContent = isOpen ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+    });
+});
+
+const phrases = [
+    "🚀 Le grandi idee iniziano da piccoli esperimenti!",
+    "☕ Prima il caffè, poi il codice.",
+    "🧠 Errore 404: idea troppo geniale.",
+    "🎮 La vita è meglio con un po' di pixel.",
+    "✨ Continua a creare cose strane!",
+    "🐸 Oggi è un ottimo giorno per fare qualcosa di inutile.",
+    "💻 Funziona? Non toccarlo!",
+    "🔥 Compila nella vita, non solo nel codice."
+];
+
+document.getElementById("random-button").addEventListener("click", () => {
+    const result = document.getElementById("fun-result");
+    let phrase;
+
+    do {
+        phrase = phrases[Math.floor(Math.random() * phrases.length)];
+    } while (phrases.length > 1 && result.textContent === phrase);
+
+    result.textContent = phrase;
+});
+</script>
 
 </body>
 </html>
