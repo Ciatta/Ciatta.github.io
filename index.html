@@ -1,10 +1,221 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, Arial, sans-serif;
+            background: #0b0f19;
+            color: #f1f5f9;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 24px 35px;
+        }
+
+        .tag {
+            color: #818cf8;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 7vw, 72px);
+            letter-spacing: -3px;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #818cf8;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        /* PROJECT GRID */
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px 24px 70px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* PROJECT CARD */
+        .card {
+            background: #151b2b;
+            border: 1px solid #252e42;
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #818cf8;
+            background: #1a2235;
+        }
+
+        .category {
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .purple { color: #818cf8; }
+        .green  { color: #34d399; }
+        .yellow { color: #fbbf24; }
+        .pink   { color: #f472b6; }
+        .blue   { color: #38bdf8; }
+        .orange { color: #fb923c; }
+
+        .card h2 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            line-height: 1.7;
+            font-size: 14px;
+            min-height: 48px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 24px;
+            text-decoration: none;
+            color: #e2e8f0;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .card a:hover {
+            color: #818cf8;
+        }
+
+        .arrow {
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .card a:hover .arrow {
+            transform: translate(4px, -4px);
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid #1e293b;
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 650px) {
+            header {
+                padding-top: 50px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+        }
+    </style>
+</head>
+
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-<a href="test.html">Test Link</a>
+    <header>
+        <div class="tag">My digital space</div>
+        <h1>Projects<span>.</span></h1>
+        <p class="subtitle">
+            Una raccolta dei miei progetti, esperimenti e idee.
+            Esplora quello che sto costruendo.
+        </p>
+    </header>
+
+    <main>
+        <div class="projects">
+
+            <!-- PROJECT 1 -->
+            <div class="card">
+                <div class="category purple">01 — WEB</div>
+                <h2>Project Alpha</h2>
+                <p>Descrizione del progetto. Spiega brevemente cosa fa e cosa lo rende interessante.</p>
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                    Apri progetto <span class="arrow">↗</span>
+                </a>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="card">
+                <div class="category green">02 — DATA</div>
+                <h2>Project Beta</h2>
+                <p>Un progetto di analisi dati, visualizzazione o ricerca.</p>
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                    Apri progetto <span class="arrow">↗</span>
+                </a>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="card">
+                <div class="category yellow">03 — TOOLS</div>
+                <h2>Project Gamma</h2>
+                <p>Uno strumento, un'applicazione o un piccolo esperimento interattivo.</p>
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                    Apri progetto <span class="arrow">↗</span>
+                </a>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="card">
+                <div class="category pink">04 — OTHER</div>
+                <h2>Project Delta</h2>
+                <p>Un altro progetto da aggiungere al tuo portfolio.</p>
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                    Apri progetto <span class="arrow">↗</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2026 · My Project Hub
+    </footer>
 
 </body>
 </html>
