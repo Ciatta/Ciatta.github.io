@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Argomenti</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #263149;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    max-width: 1050px;
+    margin: auto;
+    padding: 80px 25px 40px;
+}
+
+.tag {
+    color: #6478d3;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(28px, 4vw, 48px);
+    letter-spacing: -3px;
+    margin-bottom: 15px;
+    color: #263149;
+}
+
+h1 span {
+    color: #8094ed;
+}
+
+.subtitle {
+    color: #7c879b;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+/* MAIN */
+
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 20px 25px 80px;
+}
+
+/* GRID */
+
+.topics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+/* CARD */
+
+.card {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #e7eaf1;
+    border-radius: 20px;
+    padding: 30px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 15px rgba(30, 45, 80, 0.03);
+    transition: all 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(30, 45, 80, 0.08);
+    border-color: #d4dcfa;
+}
+
+/* ICON */
+
+.icon-box {
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 22px;
+}
+
+.blue {
+    background: #e9eeff;
+}
+
+.green {
+    background: #e1f5ed;
+}
+
+.orange {
+    background: #fff1df;
+}
+
+.purple {
+    background: #f3e8fb;
+}
+
+.pink {
+    background: #fde9f0;
+}
+
+.cyan {
+    background: #e1f5fa;
+}
+
+/* TEXT */
+
+.category {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #263149;
+}
+
+.card p {
+    color: #8490a4;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 50px;
+}
+
+/* LINK */
+
+.more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 25px;
+    color: #6478d3;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.arrow {
+    transition: transform 0.2s ease;
+}
+
+.card:hover .arrow {
+    transform: translate(4px, -4px);
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #e7eaf1;
+    text-align: center;
+    padding: 25px;
+    color: #a0a9b8;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    header {
+        padding-top: 55px;
+    }
+
+    .topics {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="tag">Knowledge Base</div>
+
+    <h1>Argomenti<span>.</span></h1>
+
+    <p class="subtitle">
+        Una raccolta di argomenti, appunti, informazioni e approfondimenti
+        organizzati in un unico posto.
+    </p>
+</header>
+
+<main>
+    <div class="topics">
+
+        <!-- ARGOMENTO 1 -->
+        <a class="card" href="map.html">
+            <div class="icon-box blue">📖</div>
+
+            <div class="category" style="color:#6478d3;">
+                Categoria 1
+            </div>
+
+            <h2>Argomento 01</h2>
+
+            <p>
+                Una breve descrizione dell'argomento e dei contenuti
+                che si possono trovare al suo interno.
+            </p>
+
+            <div class="more">
+                Approfondisci <span class="arrow">↗</span>
+            </div>
+        </a>
+
+        <!-- ARGOMENTO 2 -->
+        <a class="card" href="map.html">
+            <div class="icon-box green">✨</div>
+
+            <div class="category" style="color:#399879;">
+                Categoria 2
+            </div>
+
+            <h2>Argomento 02</h2>
+
+            <p>
+                Informazioni, curiosità e risorse utili per
+                approfondire il tema.
+            </p>
+
+            <div class="more">
+                Approfondisci <span class="arrow">↗</span>
+            </div>
+        </a>
+
+        <!-- ARGOMENTO 3 -->
+        <a class="card" href="map.html">
+            <div class="icon-box orange">🧭</div>
+
+            <div class="category" style="color:#d28b3c;">
+                Categoria 3
+            </div>
+
+            <h2>Argomento 03</h2>
+
+            <p>
+                Una raccolta di note e contenuti dedicati
+                a questo argomento.
+            </p>
+
+            <div class="more">
+                Approfondisci <span class="arrow">↗</span>
+            </div>
+        </a>
+
+        <!-- ARGOMENTO 4 -->
+        <a class="card" href="map.html">
+            <div class="icon-box purple">🔮</div>
+
+            <div class="category" style="color:#a36bc1;">
+                Categoria 4
+            </div>
+
+            <h2>Argomento 04</h2>
+
+            <p>
+                Tutto quello che serve sapere, raccolto
+                in una pagina dedicata.
+            </p>
+
+            <div class="more">
+                Approfondisci <span class="arrow">↗</span>
+            </div>
+        </a>
+
+        <!-- ARGOMENTO 5 -->
+        <a class="card" href="map.html">
+            <div class="icon-box pink">🌸</div>
+
+            <div class="category" style="color:#d27499;">
+                Categoria 5
+            </div>
+
+            <h2>Argomento 05</h2>
+
+            <p>
+                Un piccolo spazio per organizzare
+                materiale e approfondimenti.
+            </p>
+
+            <div class="more">
+                Approfondisci <span class="arrow">↗</span>
+            </div>
+        </a>
+
+        <!-- ARGOMENTO 6 -->
+        <a class="card" href="map.html">
+            <div class="icon-box cyan">💡</div>
+
+            <div class="category" style="color:#399db8;">
+                Categoria 6
+            </div>
+
+            <h2>Argomento 06</h2>
+
+            <p>
+                Guide, spiegazioni e informazioni
+                per esplorare questo tema.
+            </p>
+
+            <div class="more">
+                Approfondisci <span class="arrow">↗</span>
+            </div>
+        </a>
+
+    </div>
+</main>
+
+
+
+</body>
+</html>
