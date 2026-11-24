@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Approfondimento</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #263149;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    max-width: 1000px;
+    margin: auto;
+    padding: 65px 25px 35px;
+}
+
+.back {
+    display: inline-block;
+    text-decoration: none;
+    color: #6478d3;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    transition: 0.2s;
+}
+
+.back:hover {
+    transform: translateX(-4px);
+}
+
+.tag {
+    color: #6478d3;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: -3px;
+    margin-bottom: 18px;
+    color: #263149;
+}
+
+h1 span {
+    color: #8094ed;
+}
+
+.subtitle {
+    color: #7c879b;
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 680px;
+}
+
+/* LAYOUT */
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 25px 80px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* INDEX */
+
+.index {
+    background: #ffffff;
+    border: 1px solid #e7eaf1;
+    border-radius: 20px;
+    padding: 25px;
+    position: sticky;
+    top: 25px;
+}
+
+.index h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.index a {
+    display: block;
+    text-decoration: none;
+    color: #8490a4;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 10px 0;
+    transition: 0.2s;
+}
+
+.index a:hover {
+    color: #6478d3;
+    padding-left: 5px;
+}
+
+/* CONTENT */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.section {
+    background: #ffffff;
+    border: 1px solid #e7eaf1;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 15px rgba(30, 45, 80, 0.03);
+}
+
+.section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #263149;
+    letter-spacing: -0.5px;
+}
+
+.section h3 {
+    font-size: 17px;
+    margin: 28px 0 12px;
+    color: #36415b;
+}
+
+.section p {
+    color: #8490a4;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.section p:last-child {
+    margin-bottom: 0;
+}
+
+/* LIST */
+
+.section ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.section li {
+    color: #8490a4;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 8px;
+}
+
+/* NOTE BOX */
+
+.note {
+    background: #e9eeff;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 22px 0;
+}
+
+.note-title {
+    color: #6478d3;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.note p {
+    color: #64718f;
+    margin: 0;
+}
+
+/* OTHER BOXES */
+
+.green-note {
+    background: #e1f5ed;
+}
+
+.green-note .note-title {
+    color: #399879;
+}
+
+.green-note p {
+    color: #608c7c;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #e7eaf1;
+    text-align: center;
+    padding: 25px;
+    color: #a0a9b8;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+    header {
+        padding-top: 45px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .index {
+        position: static;
+    }
+
+    .section {
+        padding: 25px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a class="back" href="../index.html">
+        ← Torna agli argomenti
+    </a>
+
+    <div class="tag">Categoria · Approfondimento</div>
+
+    <h1>Nome argomento<span>.</span></h1>
+
+    <p class="subtitle">
+        Una breve introduzione all'argomento. Qui puoi spiegare di cosa si tratta,
+        perché è importante e cosa verrà trattato in questa pagina.
+    </p>
+
+</header>
+
+<main>
+
+    <div class="layout">
+
+        <!-- INDICE -->
+        <aside class="index">
+
+            <h3>Indice</h3>
+
+            <a href="#introduzione">01 · Introduzione</a>
+            <a href="#principali">02 · Informazioni principali</a>
+            <a href="#approfondimento">03 · Approfondimento</a>
+            <a href="#note">04 · Note</a>
+
+        </aside>
+
+
+        <!-- CONTENUTO -->
+        <div class="content">
+
+            <!-- SEZIONE 1 -->
+            <section class="section" id="introduzione">
+
+                <h2>01. Introduzione</h2>
+
+                <p>
+                    Inserisci qui il testo introduttivo del tuo argomento.
+                    Puoi utilizzare questo spazio per dare una panoramica generale,
+                    spiegare il contesto e introdurre il lettore al tema.
+                </p>
+
+                <p>
+                    Non ci sono particolari limiti alla lunghezza del testo:
+                    puoi creare più paragrafi e organizzare le informazioni
+                    come preferisci.
+                </p>
+
+                <div class="note">
+                    <div class="note-title">✦ Da ricordare</div>
+
+                    <p>
+                        Un'informazione importante che vuoi evidenziare
+                        rispetto al resto del testo.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- SEZIONE 2 -->
+            <section class="section" id="principali">
+
+                <h2>02. Informazioni principali</h2>
+
+                <p>
+                    In questa sezione puoi raccogliere i concetti più importanti
+                    e le informazioni fondamentali dell'argomento.
+                </p>
+
+                <h3>Primo punto</h3>
+
+                <p>
+                    Spiegazione del primo concetto. Puoi usare titoli più piccoli
+                    per suddividere ulteriormente il contenuto.
+                </p>
+
+                <h3>Secondo punto</h3>
+
+                <p>
+                    Spiegazione del secondo concetto, con dettagli,
+                    esempi o informazioni aggiuntive.
+                </p>
+
+                <ul>
+                    <li>Prima informazione importante</li>
+                    <li>Seconda informazione importante</li>
+                    <li>Terza informazione importante</li>
+                </ul>
+
+            </section>
+
+
+            <!-- SEZIONE 3 -->
+            <section class="section" id="approfondimento">
+
+                <h2>03. Approfondimento</h2>
+
+                <p>
+                    Questa sezione è pensata per contenuti più dettagliati.
+                    Puoi inserire spiegazioni più lunghe, collegamenti tra concetti,
+                    esempi pratici o qualsiasi informazione che meriti uno spazio dedicato.
+                </p>
+
+                <div class="note green-note">
+                    <div class="note-title">✧ Curiosità</div>
+
+                    <p>
+                        Uno spazio per curiosità, aneddoti o informazioni
+                        secondarie interessanti.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- SEZIONE 4 -->
+            <section class="section" id="note">
+
+                <h2>04. Note</h2>
+
+                <p>
+                    Utilizza questa sezione per annotazioni personali,
+                    riferimenti, fonti o informazioni da ricordare.
+                </p>
+
+                <p>
+                    Puoi anche sostituirla con un'altra sezione,
+                    aggiungerne di nuove o eliminarla del tutto.
+                </p>
+
+            </section>
+
+        </div>
+
+</main>
+
+<footer>
+    Knowledge Base · 2026
+</footer>
+
+</body>
+</html>
