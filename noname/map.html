@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Approfondimento</title>
+<title>Mappa del Mondo</title>
 
 <style>
 * {
@@ -205,6 +205,86 @@ main {
     color: #608c7c;
 }
 
+.index {
+    background: #ffffff;
+    border: 1px solid #e7eaf1;
+    border-radius: 20px;
+    padding: 25px;
+    position: sticky;
+    top: 25px;
+}
+
+.index h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #263149;
+}
+
+/* SEZIONI PRINCIPALI */
+
+.index .main-link {
+    display: block;
+    text-decoration: none;
+    color: #6478d3;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 0;
+    transition: 0.2s;
+}
+
+.index .main-link:hover {
+    padding-left: 5px;
+    color: #8094ed;
+}
+
+/* SOTTOSEZIONI */
+
+.sub-links {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    margin: 2px 0 8px 5px;
+    border-left: 2px solid #e9eeff;
+}
+
+.sub-links a {
+    display: block;
+    text-decoration: none;
+    color: #8490a4;
+    font-size: 12px;
+    padding: 7px 0 7px 12px;
+    transition: 0.2s;
+}
+
+.sub-links a:hover {
+    color: #6478d3;
+    padding-left: 17px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+section[id],
+h3[id] {
+    scroll-margin-top: 25px;
+}
+  .image-container {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #e7eaf1;
+}
+
+.image-container figcaption {
+    color: #a0a9b8;
+    font-size: 12px;
+    margin-top: 10px;
+    font-style: italic;
+}
 /* FOOTER */
 
 footer {
@@ -238,6 +318,7 @@ footer {
         letter-spacing: -2px;
     }
 }
+
 </style>
 </head>
 
@@ -245,18 +326,15 @@ footer {
 
 <header>
 
-    <a class="back" href="../index.html">
+    <a class="back" href="index.html">
         ← Torna agli argomenti
     </a>
 
-    <div class="tag">Categoria · Approfondimento</div>
+    <div class="tag">Wiki</div>
 
-    <h1>Nome argomento<span>.</span></h1>
+    <h1>Mappa del Mondo<span>.</span></h1>
 
-    <p class="subtitle">
-        Una breve introduzione all'argomento. Qui puoi spiegare di cosa si tratta,
-        perché è importante e cosa verrà trattato in questa pagina.
-    </p>
+   
 
 </header>
 
@@ -266,129 +344,61 @@ footer {
 
         <!-- INDICE -->
         <aside class="index">
-
             <h3>Indice</h3>
-
-            <a href="#introduzione">01 · Introduzione</a>
-            <a href="#principali">02 · Informazioni principali</a>
-            <a href="#approfondimento">03 · Approfondimento</a>
-            <a href="#note">04 · Note</a>
-
+            <a href="#aetheris">Aetheris</a>
         </aside>
 
 
         <!-- CONTENUTO -->
         <div class="content">
-
             <!-- SEZIONE 1 -->
-            <section class="section" id="introduzione">
-
-                <h2>01. Introduzione</h2>
-
+            <section class="section" id="aestheris">
+                <h2>Aetheris</h2>
                 <p>
-                    Inserisci qui il testo introduttivo del tuo argomento.
-                    Puoi utilizzare questo spazio per dare una panoramica generale,
-                    spiegare il contesto e introdurre il lettore al tema.
+                    Le regioni di Aetheris si sono sviluppate intorno alle razze native e le loro affinità con la natura e la magia che le circonda.
+                </p>
+                
+                <figure class="image-container">
+                    <img src="../img/Aetheris.png" alt="Aetheris">
+                    <figcaption>
+                        Mappa di Aetheris
+                    </figcaption>
+                </figure>
+                 <p>
+                   <ul>
+                    <li><b>1:</b> Regione isolata popolata da dhampir e vampiri </li>
+                    <li><b>2:</b> Regione montuosa popolata da draghi, dragonidi e goliath </li>
+                    <li><b>3:</b> Regione legata alla terra popolata da orchi, mezz'orchi, nani, genasi della terra e goblin </li>
+                    <li><b>4:</b> Regione su diversi piani popolata da elfi, mezz'elfi, aasimar, genasi dell'aria e drow </li>
+                    <li><b>5:</b> Regione popolata da umani e halfling </li>
+                    <li><b>6:</b> Regione centrale dove si trova Vesper </li>
+                    <li><b>7:</b> Regione costiera popolata da tritoni, genasi dell'acqua e creature acquatiche </li>
+                    <li><b>8:</b> Regione boschiva popolata da fate, firbolg, satiri, gnomi e changeling </li>
+                    <li><b>9:</b> Regione vulcanica da tiefling e genasi del fuoco </li>
+                  </ul>                                  
                 </p>
 
-                <p>
-                    Non ci sono particolari limiti alla lunghezza del testo:
-                    puoi creare più paragrafi e organizzare le informazioni
-                    come preferisci.
-                </p>
-
-                <div class="note">
-                    <div class="note-title">✦ Da ricordare</div>
-
+               <div class="note">
+                    <div class="note-title">✦ Note</div>
                     <p>
-                        Un'informazione importante che vuoi evidenziare
-                        rispetto al resto del testo.
+                        Potrebbe subire variazioni per esigenze di background 
                     </p>
                 </div>
+                
+
+
+              
+                
 
             </section>
 
 
-            <!-- SEZIONE 2 -->
-            <section class="section" id="principali">
-
-                <h2>02. Informazioni principali</h2>
-
-                <p>
-                    In questa sezione puoi raccogliere i concetti più importanti
-                    e le informazioni fondamentali dell'argomento.
-                </p>
-
-                <h3>Primo punto</h3>
-
-                <p>
-                    Spiegazione del primo concetto. Puoi usare titoli più piccoli
-                    per suddividere ulteriormente il contenuto.
-                </p>
-
-                <h3>Secondo punto</h3>
-
-                <p>
-                    Spiegazione del secondo concetto, con dettagli,
-                    esempi o informazioni aggiuntive.
-                </p>
-
-                <ul>
-                    <li>Prima informazione importante</li>
-                    <li>Seconda informazione importante</li>
-                    <li>Terza informazione importante</li>
-                </ul>
-
-            </section>
-
-
-            <!-- SEZIONE 3 -->
-            <section class="section" id="approfondimento">
-
-                <h2>03. Approfondimento</h2>
-
-                <p>
-                    Questa sezione è pensata per contenuti più dettagliati.
-                    Puoi inserire spiegazioni più lunghe, collegamenti tra concetti,
-                    esempi pratici o qualsiasi informazione che meriti uno spazio dedicato.
-                </p>
-
-                <div class="note green-note">
-                    <div class="note-title">✧ Curiosità</div>
-
-                    <p>
-                        Uno spazio per curiosità, aneddoti o informazioni
-                        secondarie interessanti.
-                    </p>
-                </div>
-
-            </section>
-
-
-            <!-- SEZIONE 4 -->
-            <section class="section" id="note">
-
-                <h2>04. Note</h2>
-
-                <p>
-                    Utilizza questa sezione per annotazioni personali,
-                    riferimenti, fonti o informazioni da ricordare.
-                </p>
-
-                <p>
-                    Puoi anche sostituirla con un'altra sezione,
-                    aggiungerne di nuove o eliminarla del tutto.
-                </p>
-
-            </section>
+           
 
         </div>
 
 </main>
 
-<footer>
-    Knowledge Base · 2026
-</footer>
 
 </body>
 </html>
