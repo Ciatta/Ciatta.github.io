@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Città</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #263149;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    max-width: 1000px;
+    margin: auto;
+    padding: 65px 25px 35px;
+}
+
+.back {
+    display: inline-block;
+    text-decoration: none;
+    color: #6478d3;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    transition: 0.2s;
+}
+
+.back:hover {
+    transform: translateX(-4px);
+}
+
+.tag {
+    color: #6478d3;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: -3px;
+    margin-bottom: 18px;
+    color: #263149;
+}
+
+h1 span {
+    color: #8094ed;
+}
+
+.subtitle {
+    color: #7c879b;
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 680px;
+}
+
+/* LAYOUT */
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 25px 80px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* INDEX */
+
+.index {
+    background: #ffffff;
+    border: 1px solid #e7eaf1;
+    border-radius: 20px;
+    padding: 25px;
+    position: sticky;
+    top: 25px;
+}
+
+.index h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.index a {
+    display: block;
+    text-decoration: none;
+    color: #8490a4;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 10px 0;
+    transition: 0.2s;
+}
+
+.index a:hover {
+    color: #6478d3;
+    padding-left: 5px;
+}
+
+/* CONTENT */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.section {
+    background: #ffffff;
+    border: 1px solid #e7eaf1;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 15px rgba(30, 45, 80, 0.03);
+}
+
+.section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #263149;
+    letter-spacing: -0.5px;
+}
+
+.section h3 {
+    font-size: 17px;
+    margin: 28px 0 12px;
+    color: #36415b;
+}
+
+.section p {
+    color: #8490a4;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.section p:last-child {
+    margin-bottom: 0;
+}
+
+/* LIST */
+
+.section ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.section li {
+    color: #8490a4;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 8px;
+}
+
+/* NOTE BOX */
+
+.note {
+    background: #e9eeff;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 22px 0;
+}
+
+.note-title {
+    color: #6478d3;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.note p {
+    color: #64718f;
+    margin: 0;
+}
+
+/* OTHER BOXES */
+
+.green-note {
+    background: #e1f5ed;
+}
+
+.green-note .note-title {
+    color: #399879;
+}
+
+.green-note p {
+    color: #608c7c;
+}
+
+.index {
+    background: #ffffff;
+    border: 1px solid #e7eaf1;
+    border-radius: 20px;
+    padding: 25px;
+    position: sticky;
+    top: 25px;
+}
+
+.index h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #263149;
+}
+
+/* SEZIONI PRINCIPALI */
+
+.index .main-link {
+    display: block;
+    text-decoration: none;
+    color: #6478d3;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 0;
+    transition: 0.2s;
+}
+
+.index .main-link:hover {
+    padding-left: 5px;
+    color: #8094ed;
+}
+
+/* SOTTOSEZIONI */
+
+.sub-links {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    margin: 2px 0 8px 5px;
+    border-left: 2px solid #e9eeff;
+}
+
+.sub-links a {
+    display: block;
+    text-decoration: none;
+    color: #8490a4;
+    font-size: 12px;
+    padding: 7px 0 7px 12px;
+    transition: 0.2s;
+}
+
+.sub-links a:hover {
+    color: #6478d3;
+    padding-left: 17px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+section[id],
+h3[id] {
+    scroll-margin-top: 25px;
+}
+  .image-container {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #e7eaf1;
+}
+
+.image-container figcaption {
+    color: #a0a9b8;
+    font-size: 12px;
+    margin-top: 10px;
+    font-style: italic;
+}
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #e7eaf1;
+    text-align: center;
+    padding: 25px;
+    color: #a0a9b8;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+    header {
+        padding-top: 45px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .index {
+        position: static;
+    }
+
+    .section {
+        padding: 25px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a class="back" href="index.html">
+        ← Torna agli argomenti
+    </a>
+
+    <div class="tag">Wiki</div>
+
+    <h1>Città e Punti di Interesse<span>.</span></h1>
+
+   
+
+</header>
+
+<main>
+
+    <div class="layout">
+
+        <!-- INDICE -->
+        <aside class="index">
+            <h3>Indice</h3>
+            <a href="#vesper">Vesper</a>
+            <div class="sub-links">
+              <a href="#origini">Origini</a>
+              <a href="#descrizione">Descrizione</a>
+              <a href="#personaggi">Personaggi</a>
+            </div>
+        </aside>
+
+
+        <!-- CONTENUTO -->
+        <div class="content">
+            <!-- SEZIONE 1 -->
+            <section class="section" id="vesper">
+                <h2>Vesper</h2>
+                <h3 id="origini">Le origini</h3>
+                <p>
+                    La città è rinata dopo la rivoluzione che ha portato alla caduta dei Kusumo, una famiglia di changeling che si è stabilita nella regione e ha fondato il suo impero.
+                    Durante il loro regno, abitanti di diverse zone del mondo sono stati attratti dalla città e dalle promesse di ricchezza della famiglia, finchè non si sono destati sospetti: 
+                    chi entrava la città non ne usciva e perdeva completamente i contatti con l'esterno.
+                
+                </p>
+                <p>
+                    Circa 10 anni fa, un gruppo di avventurieri ha organizzato un attacco alla fortezza, catturando e uccidendo i Kusomo e liberando Vesper dall'incanto che tratteneva i suoi cittadini.
+                    Una volta fuori dall'influenza dei Kusomo, gli abitanti si ritrovarono confusi e senza memoria degli anni passati a Vesper e molti di loro morti e intrappolati nella rete di tunnel e dungeon che si
+                    dirama dalla città e che crollò poco dopo l'attacco.
+                </p>
+                <p>
+                    La città fu ricostruita e abitata da coloro che non avevano più una casa in cui tornare, portando inizialmente alla creazione di 5 quartieri gestiti da gilde e poi all'elezione di un rappresentante per
+                    ogni quartiere per guidare la città.
+                </p>
+              
+                <h3 id="descrizione">Descrizione</h3>
+                <figure class="image-container">
+                    <img src="../img/vesper.jpg" alt="Vesper">
+                    <figcaption>
+                        Mappa di Vesper
+                    </figcaption>
+                </figure>
+                 <p>
+                    Vesper si sviluppa intorno alle rovine del castello dei Kusomo, ormai diventato piazza principale e sede del nuovo governo, e si divide in 5 quartieri:
+                   <ul>
+                    <li><b>Elarion:</b> sede della gilda degli artisti </li>
+                    <li><b>Bordavia:</b> sede della gilda degli artigiani e zona commerciale </li>
+                    <li><b>Morn:</b> sede della gilda di ladri e mercenari e area più malfamata </li>
+                    <li><b>Malveris:</b> sede della gilda degli esploratori e difensori della città </li>
+                    <li><b>Althessa:</b> centro accademico della città </li>
+                  </ul>                                  
+                </p>
+
+              <h3 id="personaggi">Personaggi</h3>
+                
+
+
+              
+                
+
+            </section>
+
+
+           
+
+        </div>
+
+</main>
+
+
+</body>
+</html>
